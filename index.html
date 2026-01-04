@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shanmuga Priyan | Multiverse Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div id="preloader">
+    <div class="loader-text glitch-text" data-text="LOADING...">LOADING...</div>
+    <div class="loader-bar"><div class="bar-fill"></div></div>
+</div>
+
+<div class="cursor-dot"></div>
+<div class="cursor-outline"></div>
+
+<div class="noise-overlay"></div>
+<div class="comic-texture"></div>
+
+<div class="floating-elements">
+    <div class="float-item x-mark" style="top: 15%; left: 5%;">X</div>
+    <div class="float-item o-ring" style="top: 25%; right: 10%;"></div>
+    <div class="float-item x-mark" style="bottom: 20%; left: 10%;">X</div>
+    <div class="float-item triangle" style="top: 60%; right: 5%;"></div>
+</div>
+
+<audio id="audio-bg" src="ambient.webm" loop></audio> 
+<audio id="audio-hover" src="hover.mp3" preload="auto"></audio>
+<audio id="audio-click" src="click.mp3" preload="auto"></audio>
+
+<div class="sound-toggle" onclick="toggleSound()">
+    <i class="fas fa-volume-mute" id="sound-icon"></i>
+</div>
+
+<nav class="navbar">
+    <div class="logo">TONY<span class="accent-cyan">PRIYAN</span></div>
+    <ul class="nav-links">
+        <li><a href="#about" class="hover-trigger">About</a></li>
+        <li><a href="#projects" class="hover-trigger">Projects</a></li>
+        <li><a href="#achievements" class="hover-trigger">Achievements</a></li>
+        <li><a href="#contact" class="hover-trigger">Connect</a></li>
+    </ul>
+    <div class="hamburger"><i class="fas fa-bars"></i></div>
+</nav>
+
+<div class="container">
+
+    <header class="hero-split">
+        <div class="hero-content">
+            <div class="comic-bubble pop-in">Hey! I am</div>
+            <h1 class="glitch-text" data-text="Shanmuga Priyan">Shanmuga Priyan</h1>
+            <h2><span class="typing-text accent-yellow"></span></h2>
+            
+            <p class="hero-text">
+                Passionate developer building things that live on the web and your phone. 
+                Turning ideas into reality through code.
+            </p>
+
+            <div class="links">
+                <a href="https://linkedin.com/in/TONYPRIYAN" target="_blank" class="comic-button cyan hover-trigger"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                <a href="https://github.com/TONYPRIYAN" target="_blank" class="comic-button red hover-trigger"><i class="fab fa-github"></i> GitHub</a>
+                <a href="https://leetcode.com/TONYPRIYAN" target="_blank" class="comic-button yellow hover-trigger"><i class="fas fa-code"></i> LeetCode</a>
+            </div>
+        </div>
+
+        <div class="hero-image-container fade-in">
+            <div class="comic-frame-wrapper tilt-card">
+                <img src="profile.jpg" alt="Shanmuga Priyan" class="pfp-img">
+                <div class="glitch-border red"></div>
+                <div class="glitch-border cyan"></div>
+            </div>
+        </div>
+    </header>
+
+    <section id="about" class="fade-in comic-panel tilt-card">
+        <h3>About Me</h3>
+        <p>
+            Passionate software developer with expertise in <strong>Java, React.js, and Spring Framework</strong>.
+            Experienced in building full-stack applications and AI-powered tools. I possess strong problem-solving abilities 
+            and a keen interest in research-driven solutions.
+        </p>
+    </section>
+
+    <section id="skills" class="fade-in">
+        <h3>Tech Stack</h3>
+        <div class="skills-grid">
+            <span class="skill-tag red hover-trigger"><i class="fab fa-java"></i> Java</span>
+            <span class="skill-tag red hover-trigger"><i class="fab fa-python"></i> Python</span>
+            <span class="skill-tag red hover-trigger">C</span>
+            <span class="skill-tag cyan hover-trigger"><i class="fab fa-react"></i> React.js</span>
+            <span class="skill-tag cyan hover-trigger"><i class="fab fa-node-js"></i> Node.js</span>
+            <span class="skill-tag cyan hover-trigger"><i class="fas fa-mobile-alt"></i> Flutter</span>
+            <span class="skill-tag purple hover-trigger"><i class="fas fa-database"></i> MySQL</span>
+            <span class="skill-tag purple hover-trigger"><i class="fas fa-leaf"></i> Spring Boot</span>
+            <span class="skill-tag purple hover-trigger"><i class="fab fa-aws"></i> AWS</span>
+        </div>
+    </section>
+
+    <section id="projects" class="fade-in">
+        <h3>Featured Projects</h3>
+        <div class="projects-container">
+            <div class="project-card comic-panel red-border tilt-card hover-trigger">
+                <div class="card-header">
+                    <h4>AI Mobile Assistant</h4>
+                    <span class="badge red-bg">Flutter & AI</span>
+                </div>
+                <p>Smart mobile app integrated with <strong>Gemini API</strong>. Features secure Firebase Auth and a sleek UI for intelligent responses.</p>
+            </div>
+
+            <div class="project-card comic-panel cyan-border tilt-card hover-trigger">
+                <div class="card-header">
+                    <h4>Emotion Detection</h4>
+                    <span class="badge cyan-bg">NLP & Python</span>
+                </div>
+                <p>Real-time text emotion classifier using <strong>DistilBERT</strong>. Detects sarcasm and fine-grained emotions using HuggingFace.</p>
+            </div>
+
+            <div class="project-card comic-panel purple-border tilt-card hover-trigger">
+                <div class="card-header">
+                    <h4>Used Cars Marketplace</h4>
+                    <span class="badge purple-bg">MERN Stack</span>
+                </div>
+                <p>Full-stack platform for buying/selling cars. Includes authentication, real-time chat, and admin dashboards.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="achievements" class="fade-in">
+        <h3>Achievements</h3>
+        <div class="achievements-wrapper comic-panel yellow-border tilt-card">
+            <div class="achievements-text">
+                <ul class="comic-list">
+                    <li><i class="fas fa-trophy accent-red"></i> <strong>Best Capstone Project</strong> – BCA & BSc CS Department</li>
+                    <li><i class="fas fa-star accent-cyan"></i> <strong>5-Star Rating</strong> in Java & Problem Solving (HackerRank)</li>
+                    <li><i class="fas fa-certificate accent-purple"></i> <strong>Flutter Certified</strong> – Udemy</li>
+                    <li><i class="fas fa-shield-alt accent-red"></i> <strong>Cyber Security Cert</strong> – ISRO</li>
+                </ul>
+            </div>
+            <div class="achievements-visual">
+                <img src="trophy.jpg" alt="Achievements" class="achievement-img">
+                <div class="sticker-badge">WINNER!</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="education fade-in">
+        <h3>Academic Logs</h3>
+        <div class="holo-grid">
+            
+            <div class="holo-card cyan-holo tilt-card hover-trigger" onmouseenter="playHover()">
+                <div class="scan-line"></div>
+                <div class="holo-header">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span>MISSION: POSTGRAD</span>
+                </div>
+                <h4>Master of Computer Applications</h4>
+                <div class="holo-details">
+                    <p><i class="fas fa-map-marker-alt"></i> VIT University, Vellore</p>
+                    <p><i class="far fa-calendar-alt"></i> 2024 – 2026</p>
+                </div>
+                <div class="corner-decor top-left"></div>
+                <div class="corner-decor bottom-right"></div>
+            </div>
+
+            <div class="holo-card red-holo tilt-card hover-trigger" onmouseenter="playHover()">
+                <div class="scan-line"></div>
+                <div class="holo-header">
+                    <i class="fas fa-user-graduate"></i>
+                    <span>MISSION: UNDERGRAD</span>
+                </div>
+                <h4>Bachelor of Computer Applications</h4>
+                <div class="holo-details">
+                    <p><i class="fas fa-map-marker-alt"></i> VIT University, Vellore</p>
+                    <p><i class="far fa-calendar-alt"></i> 2021 – 2024</p>
+                </div>
+                <div class="corner-decor top-left"></div>
+                <div class="corner-decor bottom-right"></div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h3>Contact</h3>
+                <div class="links footer-links">
+                    <a href="mailto:shanmuramu1002@gmail.com" class="comic-button purple hover-trigger"><i class="fas fa-envelope"></i> Email</a>
+                </div>
+            </div>
+            
+            <div class="footer-col">
+                <h3>Side Quests</h3>
+                <div class="links footer-links">
+                    <a href="https://www.hackerrank.com/shanmuramu1002" target="_blank" class="comic-button green hover-trigger"><i class="fab fa-hackerrank"></i> HackerRank</a>
+                    <a href="https://www.duolingo.com/profile/TONYPRIYAN" target="_blank" class="comic-button green-duo hover-trigger"><i class="fas fa-globe"></i> Duolingo</a>
+                    <a href="https://boxd.it/9L2Il" target="_blank" class="comic-button dark-letter hover-trigger"><i class="fas fa-film"></i> Letterboxd</a>
+                </div>
+            </div>
+        </div>
+
+        <p class="copyright">© 2026 Shanmuga Priyan R | "With great power comes great code."</p>
+    </footer>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
