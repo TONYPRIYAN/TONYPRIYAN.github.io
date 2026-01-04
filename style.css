@@ -42,7 +42,7 @@ body {
 }
 @keyframes load { 0% { width: 0; } 100% { width: 100%; } }
 @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
-.loaded { transform: translateY(-100%); } /* Slide up animation */
+.loaded { transform: translateY(-100%); }
 
 
 /* --- 2. CUSTOM CURSOR --- */
@@ -57,7 +57,6 @@ body {
     width: 40px; height: 40px; border: 2px solid var(--neon-cyan);
     transition: width 0.2s, height 0.2s, background-color 0.2s;
 }
-/* Interaction State */
 body:hover .cursor-outline.hovered {
     width: 60px; height: 60px;
     background-color: rgba(0, 242, 234, 0.1);
@@ -113,6 +112,10 @@ body:hover .cursor-outline.hovered {
 }
 .logo { font-family: var(--font-comic); font-size: 1.8rem; letter-spacing: 1px; }
 .accent-cyan { color: var(--neon-cyan); }
+.accent-red { color: var(--neon-red); }
+.accent-purple { color: var(--neon-purple); }
+.accent-yellow { color: var(--neon-yellow); }
+
 .nav-links { list-style: none; display: flex; gap: 25px; }
 .nav-links a { color: #fff; text-decoration: none; font-weight: bold; transition: 0.3s; }
 .nav-links a:hover { color: var(--neon-yellow); text-shadow: 0 0 5px var(--neon-yellow); }
@@ -147,48 +150,28 @@ body:hover .cursor-outline.hovered {
 
 /* --- COMIC SQUARE FRAME & GLITCH ANIMATION --- */
 .hero-image-container {
-    flex: 0 0 320px;
-    display: flex;
-    justify-content: center;
-    perspective: 1000px;
+    flex: 0 0 320px; display: flex; justify-content: center; perspective: 1000px;
 }
-
 .comic-frame-wrapper {
-    position: relative;
-    width: 280px;
-    height: 280px;
-    background: #000;
-    border: 5px solid #000;
-    box-shadow: 15px 15px 0px var(--neon-purple);
-    transform: rotate(-3deg);
-    transition: transform 0.1s ease-out; /* Changed for 3D Tilt */
-    z-index: 10;
-    transform-style: preserve-3d; /* Critical for tilt */
+    position: relative; width: 280px; height: 280px; background: #000;
+    border: 5px solid #000; box-shadow: 15px 15px 0px var(--neon-purple);
+    transform: rotate(-3deg); transition: transform 0.1s ease-out; z-index: 10;
+    transform-style: preserve-3d;
 }
-
 .pfp-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    filter: grayscale(60%) contrast(1.2); 
-    position: relative;
-    z-index: 2;
-    transition: filter 0.3s;
-    transform: translateZ(20px); /* Pop out effect */
+    width: 100%; height: 100%; object-fit: cover;
+    filter: grayscale(60%) contrast(1.2); position: relative; z-index: 2;
+    transition: filter 0.3s; transform: translateZ(20px);
 }
-
 .glitch-border {
     position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-    border: 4px solid; opacity: 0; z-index: 1; transition: 0.1s;
-    transform: translateZ(10px);
+    border: 4px solid; opacity: 0; z-index: 1; transition: 0.1s; transform: translateZ(10px);
 }
 .glitch-border.red { border-color: var(--neon-red); }
 .glitch-border.cyan { border-color: var(--neon-cyan); }
 
 /* Hover Effects */
-.comic-frame-wrapper:hover {
-    box-shadow: 20px 20px 0px var(--text-white); border-color: #fff;
-}
+.comic-frame-wrapper:hover { box-shadow: 20px 20px 0px var(--text-white); border-color: #fff; }
 .comic-frame-wrapper:hover .pfp-img { filter: grayscale(0%) contrast(1.1); }
 .comic-frame-wrapper:hover .glitch-border.red {
     opacity: 0.7; animation: glitch-shift-red 0.4s infinite alternate-reverse;
@@ -225,7 +208,6 @@ body:hover .cursor-outline.hovered {
 .green { background: #2EC866; color: #fff; }
 .green-duo { background: var(--duo-green); color: #fff; }
 .dark-letter { background: var(--letter-dark); color: #fff; border-color: #445566;}
-
 .comic-button:hover { transform: translate(-3px, -3px) skew(-5deg); box-shadow: 7px 7px 0px #fff; }
 
 /* SECTIONS */
@@ -242,11 +224,15 @@ section h3 {
     background: linear-gradient(135deg, #180326 0%, #0a001a 100%);
     padding: 30px; border: 4px solid var(--neon-purple);
     box-shadow: 10px 10px 0 rgba(0,0,0,0.5); position: relative;
-    transform-style: preserve-3d; /* For Tilt */
-    perspective: 1000px;
+    transform-style: preserve-3d; perspective: 1000px;
 }
 
-/* SKILLS */
+/* --- UPDATED SKILLS SECTION --- */
+.skill-category { margin-bottom: 40px; }
+.category-title {
+    font-family: var(--font-comic); font-size: 1.6rem; margin-bottom: 15px;
+    letter-spacing: 1px; text-transform: uppercase;
+}
 .skills-grid { display: flex; flex-wrap: wrap; gap: 12px; }
 .skill-tag {
     padding: 8px 18px; font-weight: bold; color: #000; border: 2px solid #fff;
@@ -255,14 +241,14 @@ section h3 {
 .skill-tag.red { background: var(--neon-red); color: #fff; }
 .skill-tag.cyan { background: var(--neon-cyan); }
 .skill-tag.purple { background: var(--neon-purple); color: #fff; }
+.skill-tag.yellow { background: var(--neon-yellow); color: #000; }
 .skill-tag:hover { transform: scale(1.1) skew(-10deg); box-shadow: 0 0 15px currentColor; }
 
 /* PROJECTS */
 .projects-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
 .project-card {
     border-color: #fff; clip-path: polygon(0 0, 100% 0, 100% 90%, 95% 100%, 0 100%);
-    transition: transform 0.1s ease-out; /* Smooth Tilt */
-    transform-style: preserve-3d;
+    transition: transform 0.1s ease-out; transform-style: preserve-3d;
 }
 .red-border { border-color: var(--neon-red); box-shadow: 8px 8px 0 rgba(255,0,60,0.3); }
 .cyan-border { border-color: var(--neon-cyan); box-shadow: 8px 8px 0 rgba(0,242,234,0.3); }
@@ -294,9 +280,8 @@ section h3 {
 .comic-list li { margin-bottom: 15px; padding-left: 15px; border-left: 4px solid var(--neon-cyan); font-size: 1.05rem; }
 .comic-list i { margin-right: 10px; }
 
-/* --- HOLOGRAPHIC EDUCATION CARDS --- */
+/* HOLOGRAPHIC EDUCATION */
 .holo-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
-
 .holo-card {
     background: rgba(10, 0, 20, 0.6); padding: 30px; position: relative; overflow: hidden;
     backdrop-filter: blur(5px); transition: transform 0.1s ease-out; border: 1px solid rgba(255, 255, 255, 0.1);
@@ -304,11 +289,9 @@ section h3 {
 }
 .cyan-holo { border-left: 5px solid var(--neon-cyan); box-shadow: 0 0 15px rgba(0, 242, 234, 0.1); }
 .red-holo { border-left: 5px solid var(--neon-red); box-shadow: 0 0 15px rgba(255, 0, 60, 0.1); }
-
 .holo-card:hover { background: rgba(10, 0, 20, 0.8); }
 .cyan-holo:hover { box-shadow: 0 0 25px rgba(0, 242, 234, 0.4); }
 .red-holo:hover { box-shadow: 0 0 25px rgba(255, 0, 60, 0.4); }
-
 .holo-header {
     display: flex; align-items: center; gap: 10px; font-family: var(--font-body); font-size: 0.9rem;
     letter-spacing: 2px; opacity: 0.8; margin-bottom: 10px; text-transform: uppercase; transform: translateZ(10px);
@@ -318,20 +301,16 @@ section h3 {
     transform: translateZ(20px);
 }
 .holo-details p { margin-bottom: 5px; font-size: 1rem; color: #ccc; display: flex; align-items: center; gap: 10px; transform: translateZ(15px);}
-
 .scan-line {
     position: absolute; top: 0; left: 0; width: 100%; height: 5px; background: rgba(255, 255, 255, 0.5);
     opacity: 0.5; box-shadow: 0 0 10px rgba(255,255,255,0.8); animation: scan 3s linear infinite; pointer-events: none;
 }
-@keyframes scan {
-    0% { top: -10%; opacity: 0; } 50% { opacity: 1; } 100% { top: 110%; opacity: 0; }
-}
-
+@keyframes scan { 0% { top: -10%; opacity: 0; } 50% { opacity: 1; } 100% { top: 110%; opacity: 0; } }
 .corner-decor { position: absolute; width: 20px; height: 20px; border: 2px solid transparent; pointer-events: none; }
 .top-left { top: 0; left: 0; border-top-color: #fff; border-left-color: #fff; }
 .bottom-right { bottom: 0; right: 0; border-bottom-color: #fff; border-right-color: #fff; }
 
-/* --- SOUND TOGGLE --- */
+/* SOUND TOGGLE */
 .sound-toggle {
     position: fixed; bottom: 30px; right: 30px; width: 50px; height: 50px;
     background: #000; border: 2px solid var(--neon-cyan); border-radius: 50%; color: var(--neon-cyan);
@@ -357,8 +336,8 @@ footer { text-align: center; margin-top: 100px; padding: 50px 0; border-top: 4px
     .achievements-wrapper { flex-direction: column; }
     .hero-image-container { flex: auto; width: 100%; margin-top: 20px; }
     .comic-frame-wrapper { width: 240px; height: 240px; }
-    .cursor-dot, .cursor-outline { display: none; } /* Hide Custom Cursor on mobile */
-    * { cursor: auto; } /* Restore default cursor on mobile */
+    .cursor-dot, .cursor-outline { display: none; }
+    * { cursor: auto; }
 }
 
 .fade-in { opacity: 0; transform: translateY(30px); transition: 0.8s ease-out; }
